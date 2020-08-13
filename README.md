@@ -10,7 +10,17 @@
 ### association 
 has_many :posts  
 has_many :comments  
-has_many :wakaru 
+has_many :wakaru  
+
+----------------------------------------------
+## sns_credentialテーブル
+|Column           |Type        |Options     |
+|-----------------|------------|------------|
+|user             |references  |foreign_key: true |
+|provider         |string      ||
+|uid         |string      | |
+### association
+belongs_to :user
 
 ----------------------------------------------
 ## postsテーブル
@@ -45,3 +55,4 @@ belongs_to :post
 ### association
 belongs_to :user  
 belongs_to :post  
+
