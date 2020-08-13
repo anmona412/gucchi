@@ -1,4 +1,5 @@
-class Profession < Activehash::Base
+class Profession < ActiveHash::Base
+  self.data = [
   { id: 1, profession: '---' },
   { id: 2, profession: '営業' },
   { id: 3, profession: '事務・管理' },
@@ -13,6 +14,7 @@ class Profession < Activehash::Base
   { id: 12, profession: '建築・土木技術職' },
   { id: 13, profession: '技能工・設備・交通・運輸' },
   { id: 14, profession: '医療・福祉・介護' },
-  { id: 15, profession: '教育・保育・公務員・農林水産' }
+  { id: 15, profession: '教育・保育・公務員・農林水産' },
   { id: 16, profession: '学生・その他' }
+]
 end

@@ -1,4 +1,4 @@
-class Age < Activehash::Base
+class Age < ActiveHash::Base
   self.data = [
     { id: 1, age: '---' },
     { id: 2, age: '20才以下' },
