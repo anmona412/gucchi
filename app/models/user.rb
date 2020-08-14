@@ -1,14 +1,13 @@
 class User < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   # assosiation
+  has_one :profile
   has_many :sns_credentials
-  belongs_to_active_hash :age
-  belongs_to_active_hash :profession
+
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
