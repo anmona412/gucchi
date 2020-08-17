@@ -5,12 +5,32 @@
 |nickname    |string  | |
 |email       |string  | |
 |password    |string  | |
-|age         |string  |null: false |
-|profession  |string  |null: false |
+
 ### association 
 has_many :posts  
 has_many :comments  
-has_many :wakaru 
+has_many :wakaru  
+has_one :profile
+
+----------------------------------------------
+## profileテーブル
+|Column           |Type        |Options     |
+|-----------------|------------|------------|
+|user             |references  |foreign_key: true |
+|age         |string  |null: false |
+|profession  |string  |null: false |
+### association
+belongs_to :user
+
+----------------------------------------------
+## sns_credentialテーブル
+|Column           |Type        |Options     |
+|-----------------|------------|------------|
+|user             |references  |foreign_key: true |
+|provider         |string      ||
+|uid         |string      | |
+### association
+belongs_to :user
 
 ----------------------------------------------
 ## postsテーブル
@@ -45,3 +65,4 @@ belongs_to :post
 ### association
 belongs_to :user  
 belongs_to :post  
+
