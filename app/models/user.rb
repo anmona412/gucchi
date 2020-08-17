@@ -23,7 +23,4 @@ class User < ApplicationRecord
   end
 
   # validation
-  with_options numericality: { other_than: 1 } do
-    validates :age_id, :profession_id
-  end
 end

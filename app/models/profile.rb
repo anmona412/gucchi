@@ -3,4 +3,9 @@ class Profile < ApplicationRecord
   belongs_to :user
   belongs_to_active_hash :age
   belongs_to_active_hash :profession
+
+  validates :user_id, presence: true 
+  with_options numericality: { other_than: 1 } do
+    validates :age_id, :profession_id
+  end
 end

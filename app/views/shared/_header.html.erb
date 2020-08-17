@@ -9,7 +9,7 @@
       <div class = "header-right">
         <div class = "user-top">
           <% if user_signed_in? %>
-            <%= link_to current_user.nickaname, "#", class:"user-nickname"%>
+            <%= current_user.nickname %>
           <% else %>
             <p class = "user-nickname">ゲスト</p>
           <% end %>
@@ -18,8 +18,8 @@
 
       <div class = "user-bottom">
         <% if user_signed_in? %>
-          <%= link_to "プロフィール", "#", class:"user-nickname"%>
-          <%= link_to "ログアウト", "#", class:"user-nickname"%>
+          <%= link_to "プロフィール", user_path(current_user.id), class:"user-nickname"%>
+          <%= link_to "ログアウト", destroy_user_session_path, class:"user-nickname"%>
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path %></li>
           <li><%= link_to '新規登録', new_user_registration_path %></li>
