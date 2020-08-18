@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   
-  root 'users#index'
+  root 'posts#index'
   resources :users do
     resources :profiles
   end
+  resources :posts
 end

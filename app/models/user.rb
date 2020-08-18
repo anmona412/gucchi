@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # assosiation
   has_one :profile
   has_many :sns_credentials
+  has_many :posts
 
 
   def self.from_omniauth(auth)

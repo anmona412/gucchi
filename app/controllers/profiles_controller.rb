@@ -22,7 +22,6 @@ def edit
 end
 
 def update
-  binding.pry
   if @profile.update(update_params)
     redirect_to root_path
   else
