@@ -1,3 +1,8 @@
 <%= render "shared/header" %>
 
 <%= link_to '愚痴る', new_post_path, class:"#"%>
+<div>
+<% @post.each do |post| %>
+  <%= post.comment%>
+<% end %>
+</div>
