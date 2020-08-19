@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @work = Post.where(category_id: 3)
     @human = Post.where(category_id: 4)
     @other = Post.where(category_id: 5)
-
     @eachCategory = [@none, @lifestyle, @work, @human, @other]
   end
 
@@ -15,6 +14,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @user = User.find(@post[:user_id])
   end
   
   def create

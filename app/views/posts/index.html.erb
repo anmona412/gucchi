@@ -1,21 +1,32 @@
 <%= render "shared/header" %>
 
 <%= link_to '愚痴る', new_post_path, class:"#"%>
-<div>
-  <% @post.each do |post| %>
-    <%= link_to post_path(post.id) do %>
-    <%= post.comment%>
+  <div class="post-box">
+    <% @post.each do |post| %>
+      <div class= "post-card">
+        <%= User.find(post[:user_id]).nickname%>
+        <%= User.find(post[:user_id]).profile.age.age%>
+        <%= User.find(post[:user_id]).profile.profession.profession%>
+        <%= link_to post_path(post.id) do %>
+          <%= post.comment%>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<br>
 
-<div>
   <% @eachCategory.each do |posts| %>
-    <% posts.each do |post| %>
-      <%= link_to post_path(post.id) do %>
-        <%= post.comment%>
+    <div class="post-box">
+      <% posts.each do |post| %>
+        <div class= "post-card">
+        <%= User.find(post[:user_id]).nickname%>
+        <%= User.find(post[:user_id]).profile.age.age%>
+        <%= User.find(post[:user_id]).profile.profession.profession%>
+          <%= link_to post_path(post.id) do %>
+            <%= post.comment%>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
+    </div>
     <br>
   <% end %>
-</div>

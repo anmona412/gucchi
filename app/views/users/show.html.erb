@@ -25,7 +25,11 @@
         <% end %>
       </h3>
     </div>
-      <%= link_to "プロフィール編集", edit_user_profile_path(current_user.id), class:"user-nickname"%>
+      <% if @p_exist %>
+        <%= link_to "プロフィール編集", edit_user_profile_path(current_user.id), class:"user-nickname"%>
+      <% else %>
+        <%= link_to 'プロフィール作成', new_user_profile_path(current_user.id), class:"user-nickname"%>
+      <% end %>
     <div>
 
     </div>
