@@ -3,14 +3,18 @@
 <%= link_to '愚痴る', new_post_path, class:"#"%>
 <div>
   <% @post.each do |post| %>
+    <%= link_to post_path(post.id) do %>
     <%= post.comment%>
+    <% end %>
   <% end %>
 </div>
 
 <div>
   <% @eachCategory.each do |posts| %>
     <% posts.each do |post| %>
-       <%= post.comment%>
+      <%= link_to post_path(post.id) do %>
+        <%= post.comment%>
+      <% end %>
     <% end %>
     <br>
   <% end %>
