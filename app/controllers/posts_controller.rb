@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
+    @none = Post.where(category_id: 1)
+    @lifestyle = Post.where(category_id: 2)
+    @work = Post.where(category_id: 3)
+    @human = Post.where(category_id: 4)
+    @other = Post.where(category_id: 5)
+
+    @eachCategory = [@none, @lifestyle, @work, @human, @other]
   end
 
   def new
