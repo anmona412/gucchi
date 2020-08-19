@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.references :user, foreign_key: true
       t.text :comment, null: false
+      t.string :category_id, null:false
       t.timestamps
     end
   end

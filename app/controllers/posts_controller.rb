@@ -19,6 +19,6 @@ class PostsController < ApplicationController
   private
 
   def posts_params
-    params.require(:post).permit(:comment).merge(user_id: current_user.id)
+    params.require(:post).permit(:comment, :category_id).merge(user_id: current_user.id)
   end
 end
