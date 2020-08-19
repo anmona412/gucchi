@@ -4,9 +4,9 @@
   <div class="post-box">
     <% @post.each do |post| %>
       <div class= "post-card">
-        <%= User.find(post[:user_id]).nickname%>
-        <%= User.find(post[:user_id]).profile.age.age%>
-        <%= User.find(post[:user_id]).profile.profession.profession%>
+        <%= post.user.nickname%>
+        <%= post.user.profile.age.age%>
+        <%= post.user.profile.profession.profession%>
         <%= link_to post_path(post.id) do %>
           <%= post.comment%>
         <% end %>
@@ -19,9 +19,9 @@
     <div class="post-box">
       <% posts.each do |post| %>
         <div class= "post-card">
-        <%= User.find(post[:user_id]).nickname%>
-        <%= User.find(post[:user_id]).profile.age.age%>
-        <%= User.find(post[:user_id]).profile.profession.profession%>
+        <%= post.user.nickname%>
+        <%= post.user.profile.age.age%>
+        <%= post.user.profile.profession.profession%>
           <%= link_to post_path(post.id) do %>
             <%= post.comment%>
           <% end %>

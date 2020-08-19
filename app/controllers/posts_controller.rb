@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @post = Post.includes(:user)
     @none = Post.where(category_id: 1)
     @lifestyle = Post.where(category_id: 2)
     @work = Post.where(category_id: 3)
