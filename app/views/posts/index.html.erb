@@ -1,32 +1,42 @@
 <%= render "shared/header" %>
-
-<%= link_to '愚痴る', new_post_path, class:"#"%>
-  <div class="post-box">
-    <% @post.each do |post| %>
-      <div class= "post-card">
-        <%= link_to post_path(post.id) do %>
-          <%= post.user.nickname%>
-          <%= post.user.profile.age.age%>
-          <%= post.user.profile.profession.profession%>
-          <%= post.comment%>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-<br>
-
-  <% @eachCategory.each do |posts| %>
+  <%= link_to '愚痴る', new_post_path, class:"#"%>
+<div class = "main-wrapper">
     <div class="post-box">
-      <% posts.each do |post| %>
+      <% @post.each do |post| %>
         <div class= "post-card">
           <%= link_to post_path(post.id) do %>
-            <%= post.user.nickname%>
-            <%= post.user.profile.age.age%>
-            <%= post.user.profile.profession.profession%>
-            <%= post.comment%>
+            <div class = "post-name">
+              <%= post.user.nickname%>
+            </div>
+            <div class = "post-age">
+              <%= post.user.profile.age.age%>
+            </div>
+            <div class = "post-profession">
+              <%= post.user.profile.profession.profession%>
+            </div>
+            <div class = "post-comment">
+              <%= post.comment%>
+            </div>
           <% end %>
         </div>
       <% end %>
     </div>
-    <br>
-  <% end %>
+  <br>
+
+    <% @eachCategory.each do |posts| %>
+      <div class="post-box">
+        <% posts.each do |post| %>
+          <div class= "post-card">
+            <%= link_to post_path(post.id) do %>
+              <%= post.user.nickname%>
+              <%= post.user.profile.age.age%>
+              <%= post.user.profile.profession.profession%>
+              <%= post.comment%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <br>
+    <% end %>
+
+</div>
