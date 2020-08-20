@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :post, only:[:show, :edit, :update, :destroy]
+
   def index
     @post = Post.includes(:user)
     @none = Post.where(category_id: 1)
@@ -14,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
   
   def create
@@ -27,20 +28,30 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(posts_params)
       redirect_to post_path
     else
       render "edit"
     end
   end
+
+  def destroy
+    if @post.destroy
+      redirect_to root_path
+    else
+      render "show"
+    end
+  end
   private
 
   def posts_params
     params.require(:post).permit(:comment, :category_id).merge(user_id: current_user.id)
+  end
+
+  def post
+    @post = Post.find(params[:id])
   end
 end

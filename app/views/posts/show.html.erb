@@ -5,4 +5,5 @@
 <%= @post.comment%>
 <% if current_user.id == @post.user_id %>
   <%= link_to '編集', edit_post_path, class:"#"%>
+  <%= link_to '削除', post_path(@post.id), method: :delete, class:'item-destroy' %>
 <% end %>
