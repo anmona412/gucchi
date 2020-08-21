@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :post, only:[:show, :edit, :update, :destroy]
 
   def index
-    @post = Post.includes(:user)
+    @post = Post.includes(:user).order(created_at: :desc)
     @none = Post.where(category_id: 1)
     @lifestyle = Post.where(category_id: 2)
     @work = Post.where(category_id: 3)
@@ -12,15 +12,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = PostsTag.new
   end
 
   def show
   end
   
   def create
-    post = Post.new(posts_params)
-    if post.save
+    post = PostsTag.new(posts_params)
+    if post.valid?
+      post.save
       redirect_to root_path
     else
       render "new"
@@ -48,7 +49,7 @@ class PostsController < ApplicationController
   private
 
   def posts_params
-    params.require(:post).permit(:comment, :category_id).merge(user_id: current_user.id)
+    params.require(:posts_tag).permit(:comment, :category_id, :name).merge(user_id: current_user.id)
   end
 
   def post

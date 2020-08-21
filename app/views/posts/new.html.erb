@@ -1,6 +1,11 @@
 <%= render "shared/header" %>
 <%= form_with model:@post, url:posts_path, local: true do |f| %>
-  <%= f.text_area :comment, class:"クラス", placeholder:"愚痴" %>
-  <%= f.collection_select(:category_id, Category.all, :id, :category, {}, {class:"select-box"}) %>
+    <%= f.text_area :comment, class:"クラス", placeholder:"愚痴" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :category, {}, {class:"select-box"}) %>
+  <div class="tag-field", id='tag-field'>
+    <%= f.text_field :name, class:"input-tag" %>
+  </div>
+  <div id = "search-result">
+  </div>
   <%= f.submit "投稿", class:"＃"%>
 <% end %>

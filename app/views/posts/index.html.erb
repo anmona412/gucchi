@@ -8,6 +8,15 @@
             <div class = "post-name">
               <%= post.user.nickname%>
             </div>
+            <div class ="post-tag">
+              <ul class="tag">
+                <li class="tag-list">
+                  <%post.tags.each do |tag| %>
+                    #<%=tag.name%>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
             <div class = "post-age">
               <%= post.user.profile.age.age%>
             </div>
