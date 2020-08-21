@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+
+<div class = "main-wrapper">
+  <div>
+    <%= form_with model:@post,local: true do |f| %>
+    <%= f.text_area :comment, class:"クラス", value:@post.comment %>
+      <%= f.collection_select(:category_id, Category.all, :id, :category, {selected:@post.category_id}, {class:"select-box"}) %>
+      <%= f.submit "更新", class:"クラス"%>
+    <% end %>
+  </div>
+</div>

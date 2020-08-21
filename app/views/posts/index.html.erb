@@ -1,17 +1,51 @@
 <%= render "shared/header" %>
+  <%= link_to '愚痴る', new_post_path, class:"#"%>
+<div class = "main-wrapper">
+    <div class="post-box">
+      <% @post.each do |post| %>
+        <div class= "post-card">
+          <%= link_to post_path(post.id) do %>
+            <div class = "post-name">
+              <%= post.user.nickname%>
+            </div>
+            <div class ="post-tag">
+              <ul class="tag">
+                <li class="tag-list">
+                  <%post.tags.each do |tag| %>
+                    #<%=tag.name%>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
+            <div class = "post-age">
+              <%= post.user.profile.age.age%>
+            </div>
+            <div class = "post-profession">
+              <%= post.user.profile.profession.profession%>
+            </div>
+            <div class = "post-comment">
+              <%= post.comment%>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <br>
 
-<%= link_to '愚痴る', new_post_path, class:"#"%>
-<div>
-  <% @post.each do |post| %>
-    <%= post.comment%>
-  <% end %>
-</div>
-
-<div>
-  <% @eachCategory.each do |posts| %>
-    <% posts.each do |post| %>
-       <%= post.comment%>
+    <% @eachCategory.each do |posts| %>
+      <div class="post-box">
+        <% posts.each do |post| %>
+          <div class= "post-card">
+            <%= link_to post_path(post.id) do %>
+              <%= post.user.nickname%>
+              <%= post.user.profile.age.age%>
+              <%= post.user.profile.profession.profession%>
+              <%= post.comment%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <br>
     <% end %>
-    <br>
-  <% end %>
+
 </div>

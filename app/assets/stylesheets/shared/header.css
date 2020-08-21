@@ -1,0 +1,61 @@
+/* .body{
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+.wrapper{
+  display: flex;
+
+}
+
+.header-wrapper{
+  width: 50vw;
+  height: 100px;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header-left{
+
+}
+
+.top-image{
+
+}
+
+.header-right{
+
+}
+
+.user-top{
+  width: 20vh;
+  height: 40px;
+  margin: 5px 5px 0px 0px;
+  text-align: right;
+  background-color: aquamarine;
+  
+}
+
+.display-name{
+  font-size: 20px;
+  padding:5px ;
+  width: 100%;
+  text-align: right;
+}
+
+.user-bottom{
+  width: 20vh;
+  height: 40px;
+  margin: 10px 5px 0px 0px;
+  text-align: right;
+  background-color:lemonchiffon;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-out{
+  text-decoration: none;
+}

@@ -1,0 +1,32 @@
+.main-wrapper{
+  display: flex;
+  width: 100vw;
+  padding: 0px 5vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.post-box{
+  width: 15vw;
+}
+
+.post-card{
+  margin: 5px;
+  background-color: lightsteelblue;
+}
+
+.post-name{
+
+}
+
+.post-age{
+
+}
+
+.post-profession{
+
+}
+
+.post-comment{
+
+}
