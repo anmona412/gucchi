@@ -6,4 +6,12 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tag_relations
 
   validates :comment, presence: true 
+
+  def self.search(search)
+    if search != ""
+      Post.where('comment LIKE(?)',"%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
