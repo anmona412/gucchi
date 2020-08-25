@@ -1,14 +1,21 @@
 class PostsController < ApplicationController
   before_action :post, only:[:show, :edit, :update, :destroy]
-
   def index
     @post = Post.includes(:user).order(created_at: :desc)
     @none = Post.where(category_id: 1)
-    @lifestyle = Post.where(category_id: 2)
-    @work = Post.where(category_id: 3)
-    @human = Post.where(category_id: 4)
-    @other = Post.where(category_id: 5)
-    @eachCategory = [@none, @lifestyle, @work, @human, @other]
+    @label_id = [
+      {id: "lifestyle", name: "生活"},
+      {id: "work", name: "仕事"},
+      {id: "human", name: "人間関係"},
+      {id: "other", name: "その他"}
+    ]
+    @post_box =[
+      {id: "all-posts", category: @post},
+      {id: "lifestyle-posts", category: Post.where(category_id: 2).order(created_at: :desc)},
+      {id: "work-posts", category: Post.where(category_id: 3).order(created_at: :desc)},
+      {id: "human-posts", category: Post.where(category_id: 4).order(created_at: :desc)},
+      {id: "other-posts", category: Post.where(category_id: 5).order(created_at: :desc)}
+    ]
   end
 
   def new
@@ -48,9 +55,10 @@ class PostsController < ApplicationController
   end
 
   def search
-    return nil if params[:input] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
-    render json:{ keyword: tag }
+    @post = Post.search(params[:keyword])
+    # return nil if params[:input] == ""
+    # tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    # render json:{ keyword: tag }
   end
 
   private
@@ -62,4 +70,5 @@ class PostsController < ApplicationController
   def post
     @post = Post.find(params[:id])
   end
+
 end

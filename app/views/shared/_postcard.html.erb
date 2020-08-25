@@ -1,0 +1,36 @@
+<div class= "post-card">
+  <%= link_to post_path(post.id), class:"post-link" do  %>
+  <div class = "card-top">
+    <div class = "card-top-left">
+      <div class = "post-name">
+        <%= post.user.nickname%>
+      </div>
+
+      <div class = "post-age">
+        <%= post.user.profile.age.age%>
+      </div>
+    </div>
+
+    <div class = "card-top-right">
+      <div class = "post-profession">
+        <%= post.user.profile.profession.profession%>
+      </div>
+      <div class ="post-tag">
+        <ul class="tag">
+          <li class="tag-list">
+            <%post.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class = "card-bottom">
+    <div class = "post-comment">
+      <%= post.comment%>
+    </div>
+  </div>
+  <% end %>
+</div>
