@@ -1,3 +1,8 @@
+.body{
+  background-color: #734C36;
+  height: 100%;
+}
+
 .main-wrapper{
   width: 50vw;
   margin-top: 5px;
@@ -6,45 +11,59 @@
 }
 
 .index-top{
-  background-color: rgb(158, 168, 182);
+  height: 50px;
+  background-color: #734C36;
   display: flex;
   justify-content: space-between;
 }
 
-.post-comment{
-
+.make-post{
+  margin: 5px 0 5px 10px;
+  padding: 5px;
+  font-size: 120%;
+  border-radius: 5px;
+  background-color: rgba(133, 13, 13, 0.788);
+  border: none;
+  color: rgb(46, 9, 9);
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .search-form{
-
+  height: 100%;
+  margin: 5px 10px 5px 0px;
 }
 
 .search-input{
-
+  height: 80%;
 }
 
 .search-btn{
-
+  height: 80%;
 }
 
 .index-bottom{
-  margin-top: 50px;
-  padding-bottom: 40px;
-  background-color: rgba(109, 82, 82, 0.603);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
   width: 100%;
+
+  border-radius: 5px 30px 0 0;
   margin: 0 auto;
+  margin-top: 5px;
+  padding-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .tab_item {
   width: calc(100%/5);
   height: 50px;
-  border-bottom: 3px solid rgba(109, 82, 82, 0.603);
-  background-color: #d9d9d9;
+  border-bottom: 3px solid#402718;
+  border-radius: 5px 30px 0 0;
+  background-color: #8C796D;
   line-height: 50px;
   font-size: 16px;
   text-align: center;
-  color: #565656;
+  color: #ececec;
   display: block;
   float: left;
   text-align: center;
@@ -60,10 +79,12 @@ input[name="tab_item"] {
 }
 
 .post-box {
+  height: 100%;
   display: none;
   padding: 40px 40px 0;
   clear: both;
   overflow: hidden;
+  background-color: #402718;
 }
 
 #all:checked ~ #all-posts,
@@ -71,11 +92,12 @@ input[name="tab_item"] {
 #work:checked ~ #work-posts,
 #human:checked ~ #human-posts,
 #other:checked ~ #other-posts{
+  height: 100%;
   display: block;
 }
 
 /*選択されているタブのスタイルを変える*/
 .index-bottom input:checked + .tab_item {
-  background-color: rgba(109, 82, 82, 0.603);
+  background-color: #402718;
   color: #fff;
 }
