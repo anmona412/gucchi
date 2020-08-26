@@ -16,10 +16,10 @@ class PostsController < ApplicationController
       {id: "human-posts", category: Post.where(category_id: 4).order(created_at: :desc)},
       {id: "other-posts", category: Post.where(category_id: 5).order(created_at: :desc)}
     ]
+    @mk_post = PostsTag.new
   end
 
   def new
-    @post = PostsTag.new
   end
 
   def show

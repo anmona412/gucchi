@@ -9,6 +9,10 @@
   margin-left: auto;
 }
 
+.view-box{
+  height: calc(100% - 100px);
+}
+
 .index-top{
   height: 50px;
   background-color: #734C36;
@@ -26,6 +30,12 @@
   text-decoration: none;
   box-shadow: 0px 0px 0px 5px rgba(133, 13, 13, 0.788);
   border: dashed 1px #FFF;
+  font-weight: bold;
+  color: #ececec;
+}
+
+.make-post:hover {
+  opacity: 0.75;
 }
 
 .search-form{
@@ -44,11 +54,10 @@
 .index-bottom{
   height: 100%;
   width: 100%;
-
   border-radius: 5px 30px 0 0;
   margin: 0 auto;
   margin-top: 5px;
-  padding-bottom: 40px;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -56,6 +65,7 @@
 .tab_item {
   width: calc(100%/5);
   height: 50px;
+  margin-bottom: 0px;
   border-bottom: 3px solid#402718;
   border-radius: 5px 30px 0 0;
   background-color: #8C796D;

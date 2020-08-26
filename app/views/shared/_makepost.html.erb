@@ -1,0 +1,28 @@
+
+  <button type="button" class="make-post" data-toggle="modal" data-target="#post">ぐちる</button>
+  <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+      <div class ="post-wrap">
+          <%= form_with model:mk_post, url:posts_path, local: true  do |f| %>
+            <div class="modal-body">
+              <div class= "new-top">
+                カテゴリー：<%= f.collection_select(:category_id, Category.all, :id, :category, {}, {class:"select-box"}) %>
+                <div class="tag-field", id='tag-field'>
+                  タグ：<%= f.text_field :name, class:"input-tag" %>
+                </div>
+              </div>
+              <div class = "new-bottom">
+                <%= f.text_area :comment, class: "form-control", placeholder: "愚痴の内容" %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <%= f.submit "ぐちる", class: "make-post" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
