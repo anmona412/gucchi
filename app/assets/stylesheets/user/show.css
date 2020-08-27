@@ -1,5 +1,5 @@
 .profile-box {
-  width: 500px;
+  width: 700px;
   padding: 10px;
   background-color: #402718;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
@@ -11,7 +11,7 @@
 .profile-hedder {
   background-color: #caaa98;
   padding: 5px;
-  border-bottom: double;
+  border-bottom: double black 3px;
   border-radius: 6px;
 }
 
@@ -48,5 +48,5 @@
 
 .posted-index {
   color: white;
-  margin: 10px 0;
+  margin: 10px 0 10px 5px;
 }
