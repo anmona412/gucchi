@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @profile =Profile.find_by(user_id: current_user.id)
     @p_exist =Profile.where(user_id: current_user.id).exists?
+    @post = Post.where(user_id: current_user.id)
   end
 
   def new
@@ -17,7 +18,4 @@ class UsersController < ApplicationController
   def destroy
     
   end
-
-
-
 end

@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class = "main-wrapper">
-  <div>
+  <div class = "view-wrapper">
     <%= form_with url: user_profiles_path(current_user.id), local: true do |f| %>
       <%= f.collection_select(:age_id, Age.all, :id, :age, {}, {class:"select-box"}) %>
       <%= f.collection_select(:profession_id, Profession.all, :id, :profession, {}, {class:"select-box"}) %>
