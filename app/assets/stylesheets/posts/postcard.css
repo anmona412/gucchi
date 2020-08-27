@@ -1,5 +1,4 @@
-
-.post-card{
+.post-card {
   margin: 5px;
   padding: 10px;
   background-color: rgb(223, 221, 221);
@@ -8,54 +7,73 @@
   border-radius: 3px 10px 10px 3px;
 }
 
-.post-link{
+.post-card:hover {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.post-link {
   text-decoration: none;
 }
 
-.card-top{
+.card-top {
   display: flex;
   justify-content: space-between;
 }
 
-.card-top-left{
-
+.card-top-left {
 }
 
-
-.post-name{
+.post-name {
+  font-size: 18px;
   color: black;
 }
 
-.post-age{
-
+.post-age {
+  font-size: 13px;
+  color: black;
+  text-decoration: none;
 }
 
-.card-top-right{
-
+.card-font {
+  text-decoration: underline;
 }
 
-.post-profession{
-
+.post-profession {
+  font-size: 13px;
+  color: black;
+  text-decoration: none;
 }
 
-.post-tag{
-
+.card-top-right {
+  height: 100%;
 }
 
-.tag{
-
+.post-category {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  height: 50%;
 }
 
-.tag-list{
-
+.post-tag {
+  color: black;
+  text-decoration: none;
+  height: 50%;
 }
 
-.card-bottom{
+.tag {
+}
+
+.tag-list {
+}
+
+.card-bottom {
   background-color: rgba(138, 128, 128, 0.603);
   padding: 5px;
   height: 100px;
   border-radius: 10px;
 }
-.post-comment{
-  
+.post-comment {
+  color: rgb(70, 70, 70);
 }

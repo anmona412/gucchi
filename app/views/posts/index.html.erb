@@ -20,7 +20,7 @@
     <% @post_box.each do |post_box| %>
       <div class="post-box" id = <%= post_box[:id]%>>
         <% post_box[:category].each do |post| %>
-          <%= render partial: "shared/postcard", locals: { post: post } %>
+          <%= render partial: "shared/postcard", locals: { post: post} %>
         <% end %>
       </div>
     <% end %>

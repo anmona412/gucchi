@@ -8,7 +8,9 @@
           <%= form_with model:mk_post, url:posts_path, local: true  do |f| %>
             <div class="modal-body">
               <div class= "new-top">
+              <div>
                 カテゴリー：<%= f.collection_select(:category_id, Category.all, :id, :category, {}, {class:"select-box"}) %>
+              </div>
                 <div class="tag-field", id='tag-field'>
                   タグ：<%= f.text_field :name, class:"input-tag" %>
                 </div>
