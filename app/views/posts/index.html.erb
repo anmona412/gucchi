@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class = "main-wrapper">
   <div class = "index-top">
-      <%= link_to '愚痴る', new_post_path, class:"post-comment"%>
+      <%= render partial: "shared/makepost", locals: {mk_post: @mk_post, post: @post} %>
     <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
@@ -11,7 +11,7 @@
   <div class = "index-bottom">
     <input id="all" type="radio" name="tab_item" checked>
     <label class="tab_item" for="all">総合</label>
-
+    
     <% @label_id.each do |f| %>
       <input id=<%= f[:id] %> type="radio" name="tab_item" >
       <label class="tab_item" for=<%= f[:id] %>><%= f[:name] %></label>
@@ -20,7 +20,7 @@
     <% @post_box.each do |post_box| %>
       <div class="post-box" id = <%= post_box[:id]%>>
         <% post_box[:category].each do |post| %>
-          <%= render partial: "shared/postcard", locals: { post: post } %>
+          <%= render partial: "shared/postcard", locals: { post: post} %>
         <% end %>
       </div>
     <% end %>

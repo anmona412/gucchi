@@ -1,50 +1,77 @@
-.main-wrapper{
-  width: 50vw;
+.body {
+  background-color: #734c36;
+}
+
+.main-wrapper {
+  width: 60%;
   margin-top: 5px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.index-top{
-  background-color: rgb(158, 168, 182);
+.view-box {
+  height: calc(100% - 100px);
+}
+
+.index-top {
+  height: 50px;
+  background-color: #734c36;
   display: flex;
   justify-content: space-between;
 }
 
-.post-comment{
-
+.make-post {
+  margin: 5px 0 5px 10px;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: rgba(133, 13, 13, 0.788);
+  border: none;
+  color: rgb(46, 9, 9);
+  text-decoration: none;
+  box-shadow: 0px 0px 0px 5px rgba(133, 13, 13, 0.788);
+  border: dashed 1px #fff;
+  font-weight: bold;
+  color: #ececec;
 }
 
-.search-form{
-
+.make-post:hover {
+  opacity: 0.75;
 }
 
-.search-input{
-
+.search-form {
+  height: 100%;
+  margin: 5px 10px 5px 0px;
 }
 
-.search-btn{
-
+.search-input {
+  height: 80%;
 }
 
-.index-bottom{
-  margin-top: 50px;
-  padding-bottom: 40px;
-  background-color: rgba(109, 82, 82, 0.603);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.search-btn {
+  height: 80%;
+}
+
+.index-bottom {
+  height: 100%;
   width: 100%;
+  border-radius: 5px 30px 0 0;
   margin: 0 auto;
+  margin-top: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .tab_item {
-  width: calc(100%/5);
+  width: calc(100% / 5);
   height: 50px;
-  border-bottom: 3px solid rgba(109, 82, 82, 0.603);
-  background-color: #d9d9d9;
+  margin-bottom: 0px;
+  border-bottom: 3px solid#402718;
+  border-radius: 5px 30px 0 0;
+  background-color: #8c796d;
   line-height: 50px;
   font-size: 16px;
   text-align: center;
-  color: #565656;
+  color: #ececec;
   display: block;
   float: left;
   text-align: center;
@@ -60,22 +87,25 @@ input[name="tab_item"] {
 }
 
 .post-box {
+  height: 100%;
   display: none;
   padding: 40px 40px 0;
   clear: both;
   overflow: hidden;
+  background-color: #402718;
 }
 
 #all:checked ~ #all-posts,
 #lifestyle:checked ~ #lifestyle-posts,
 #work:checked ~ #work-posts,
 #human:checked ~ #human-posts,
-#other:checked ~ #other-posts{
+#other:checked ~ #other-posts {
+  height: 100%;
   display: block;
 }
 
 /*選択されているタブのスタイルを変える*/
 .index-bottom input:checked + .tab_item {
-  background-color: rgba(109, 82, 82, 0.603);
+  background-color: #402718;
   color: #fff;
 }

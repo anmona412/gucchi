@@ -1,0 +1,32 @@
+.view-wrapper {
+  height: 100vh;
+}
+
+.post-wrap {
+  /* width: 60vw; */
+  height: 300px;
+  border-radius: 5px;
+  background-color: #26160d;
+  border: solid 3px rgb(150, 147, 147);
+}
+
+.modal-body {
+  height: 200px;
+  background-color: lightsteelblue;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+textarea.form-control{
+  height: 150px;
+  margin: 5px 0px;
+}
+
+.new-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer {
+  height: 72px;
+  background-color: #734c36;

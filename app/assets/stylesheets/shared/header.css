@@ -5,13 +5,13 @@
 
 .wrapper{
   display: flex;
+  background-color: #26160D;
 
 }
 
 .header-wrapper{
   width: 50vw;
   height: 100px;
-  background-color: lightslategray;
   display: flex;
   justify-content: space-between;
   margin-right: auto;
@@ -19,15 +19,18 @@
 }
 
 .header-left{
-
+  
 }
 
 .top-image{
-
+  font-size: 30px;
+  color: #593F28;
+  text-decoration: none;
 }
 
 .header-right{
-
+  
+  
 }
 
 .user-top{
@@ -35,8 +38,6 @@
   height: 40px;
   margin: 5px 5px 0px 0px;
   text-align: right;
-  background-color: aquamarine;
-  
 }
 
 .display-name{
@@ -44,6 +45,7 @@
   padding:5px ;
   width: 100%;
   text-align: right;
+  color: rgb(235, 209, 209);
 }
 
 .user-bottom{
@@ -51,11 +53,11 @@
   height: 40px;
   margin: 10px 5px 0px 0px;
   text-align: right;
-  background-color:lemonchiffon;
   display: flex;
   justify-content: space-between;
 }
 
 .login-out{
+  color: #7a6e67;
   text-decoration: none;
 }

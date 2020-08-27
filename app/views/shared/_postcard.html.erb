@@ -3,23 +3,27 @@
   <div class = "card-top">
     <div class = "card-top-left">
       <div class = "post-name">
-        <%= post.user.nickname%>
+        Name: <%= post.user.nickname%>
       </div>
 
       <div class = "post-age">
-        <%= post.user.profile.age.age%>
+        Age: <strong class = "card-font"><%= post.user.profile.age.age%></strong>
+      </div>
+
+      <div class = "post-profession">
+        Profession: <strong class = "card-font"><%= post.user.profile.profession.profession%></strong>
       </div>
     </div>
 
     <div class = "card-top-right">
-      <div class = "post-profession">
-        <%= post.user.profile.profession.profession%>
+      <div class = "post-category">
+        カテゴリ: <%= post.category.category%>
       </div>
       <div class ="post-tag">
         <ul class="tag">
           <li class="tag-list">
             <%post.tags.each do |tag| %>
-              #<%=tag.name%>
+              タグ#<%=tag.name%>
             <%end%>
           </li>
         </ul>

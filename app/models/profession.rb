@@ -5,7 +5,7 @@ class Profession < ActiveHash::Base
   { id: 3, profession: '事務・管理' },
   { id: 4, profession: '企画・マーケティング・経営・管理職' },
   { id: 5, profession: 'サービス・販売・外食' },
-  { id: 6, profession: 'Weｂ・インターネット・ゲーム' },
+  { id: 6, profession: 'Web・インターネット・ゲーム' },
   { id: 7, profession: 'クリエイティブ（メディア・アパレル・デザイン）' },
   { id: 8, profession: '専門職（コンサルタント・士業・金融・不動産）' },
   { id: 9, profession: 'ITエンジニア（システム開発・SE・インフラ）' },
