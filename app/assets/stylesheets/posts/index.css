@@ -10,10 +10,6 @@
   margin-left: auto;
 }
 
-.view-box {
-  height: calc(100% - 100px);
-}
-
 .index-top {
   height: 50px;
   background-color: #734c36;
@@ -112,8 +108,24 @@ input[name="tab_item"] {
 
 .post-box-search {
   height: 100%;
+  margin-top: 10px;
   padding: 40px 40px 0;
   clear: both;
   overflow: hidden;
   background-color: #402718;
+  border-radius: 5px;
+}
+
+.searched-word {
+  display: flex;
+}
+
+.search-tag {
+  font-size: 18px;
+  color: #fff;
+}
+
+.searched-word {
+  font-size: 18px;
+  color: #ececec;
 }

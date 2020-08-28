@@ -1,0 +1,15 @@
+.session-wrap {
+  width: 60%;
+  padding: 10px;
+  background-color: #e0e0e0;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: solid rgb(90, 88, 88) 3px;
+  border-radius: 3px;
+  margin: 30px auto 10px;
+}
+
+.field {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+}

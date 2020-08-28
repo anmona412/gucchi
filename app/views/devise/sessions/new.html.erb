@@ -1,30 +1,38 @@
-<h2>Log in</h2>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<%= render "shared/header" %>
+<div class ="main-wrapper">
+  <div class ="session-wrap">
+    <h2>Log in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class ="login-info">
+        <%= f.label :email %>
+      </div>
+      <div class ="login-form">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
     </div>
+    <div class="field">
+      <div class ="login-info">
+        <%= f.label :password %>
+      </div>
+      <div class ="login-form">
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+    </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="remenber">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+    <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%>
+    <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-
-
-<%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%>
-<%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
-<% end %>
+</div>
 
 
 

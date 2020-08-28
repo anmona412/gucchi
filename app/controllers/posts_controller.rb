@@ -55,7 +55,11 @@ class PostsController < ApplicationController
   end
 
   def search
+    if params[:keyword] == ""
+      redirect_to "/"
+    end
     @post = Post.search(params[:keyword])
+    
     # return nil if params[:input] == ""
     # tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
     # render json:{ keyword: tag }
