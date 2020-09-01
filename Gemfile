@@ -69,3 +69,7 @@ gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 gem "ransack"
 gem "virtus"
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
