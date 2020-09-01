@@ -1,37 +1,47 @@
 <%= render "shared/header" %>
-
 <div class = "main-wrapper">
-  <div class="profile-show">
-    <div class = "user-info">
-      <h2 class= "user-nickname">
-        <%= @user.nickname %>
-      </h2>
-    </div>
-    <div class= "profiles">
-      <h3 class ="show-profile">
-        <% if  @p_exist %>
-          <%= @profile.age.age %>
-        <% else %>
-          ---
-        <% end %>
-        
-      </h3>
-      
-      <h3 class ="show-profile">
-        <% if @p_exist %>
-          <%= @profile.profession.profession %>
-        <% else %>
-          ---
-        <% end %>
-      </h3>
-    </div>
-      <% if @p_exist %>
-        <%= link_to "プロフィール編集", edit_user_profile_path(current_user.id), class:"user-nickname"%>
-      <% else %>
-        <%= link_to 'プロフィール作成', new_user_profile_path(current_user.id), class:"user-nickname"%>
-      <% end %>
-    <div>
+    <div class = "profile-box">
+      <div class = "profile-hedder">
+        <div class = "profile-top">
+          <div class = "user-info">
+              Name: <%= @user.nickname %>
+          </div>
+          <div class= "profiles">
+            <div class = "profiles-info">
+              <% if  @p_exist %>
+                Age:<%= @profile.age.age %>
+              <% else %>
+                ---
+              <% end %>
+            </div>
+            <div class = "profiles-info">
+              <% if @p_exist %>
+                Profession:<%= @profile.profession.profession %>
+              <% else %>
+                ---
+              <% end %>
+            </div>
+          </div>
+        </div>
 
+        <div class = "profile-bottom">
+          <% if @p_exist %>
+            <%= link_to "プロフィール編集", edit_user_profile_path(current_user.id)%>
+          <% else %>
+            <%= link_to 'プロフィール作成', new_user_profile_path(current_user.id)%>
+          <% end %>
+        </div>
+      </div>
+
+      <div class = "users-post">
+        <div class ="posted-index">
+          投稿一覧
+        </div>
+        <div class ="posted">
+          <% @post.each do |post| %>
+            <%= render partial: "shared/postcard", locals: { post: post} %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
 </div>

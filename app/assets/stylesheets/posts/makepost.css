@@ -1,5 +1,5 @@
 .view-wrapper {
-  height: 100vh;
+  height: auto;
 }
 
 .post-wrap {
@@ -17,7 +17,7 @@
   border-radius: 5px;
 }
 
-textarea.form-control{
+textarea.form-control {
   height: 150px;
   margin: 5px 0px;
 }
@@ -30,3 +30,4 @@ textarea.form-control{
 .modal-footer {
   height: 72px;
   background-color: #734c36;
+}

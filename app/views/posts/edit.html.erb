@@ -1,11 +1,57 @@
 <%= render "shared/header" %>
 
 <div class = "main-wrapper">
+
+
+<div class= "post-card">
+  <div class = "card-top">
+    <div class = "card-top-left">
+      <div class = "post-name">
+        Name: <%= @post.user.nickname%>
+      </div>
+
+      <div class = "post-age">
+        Age: <strong class = "card-font"><%= @post.user.profile.age.age%></strong>
+      </div>
+
+      <div class = "post-profession">
+        Profession: <strong class = "card-font"><%= @post.user.profile.profession.profession%></strong>
+      </div>
+    </div>
+<%= form_with model:@post_form,local: true do |f| %>
+    <div class = "card-top-right">
+      <div class = "post-category">
+        カテゴリ: <%= f.collection_select(:category_id, Category.all, :id, :category, {selected:@post.category_id},{class:"select-box"}) %>
+      </div>
+      <div class ="post-tag">
+        <ul class="tag">
+          <li class="tag-list">
+            <%@post.tags.each do |tag| %>
+              タグ#<%= f.text_field :name, class:"input-tag",value:tag.name %>
+            <%end%>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class = "card-bottom">
+    <div class = "post-comment">
+    <%= f.text_area :comment, class:"クラス",size:"79x3", value:@post.comment %>
+    </div>
+  </div>
+  <div class = "flex-box">
+    <div></div>
+    <%= f.submit "更新", class:"make-post"%>
+  </div>
+  
+<% end %>
+</div>
+
+
   <div>
-    <%= form_with model:@post,local: true do |f| %>
-    <%= f.text_area :comment, class:"クラス", value:@post.comment %>
-      <%= f.collection_select(:category_id, Category.all, :id, :category, {selected:@post.category_id}, {class:"select-box"}) %>
-      <%= f.submit "更新", class:"クラス"%>
-    <% end %>
+    
+    
   </div>
 </div>
+

@@ -1,16 +1,13 @@
 .body {
+  min-height: 100vh;
   background-color: #734c36;
 }
 
 .main-wrapper {
-  width: 60%;
+  width: 700px;
   margin-top: 5px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.view-box {
-  height: calc(100% - 100px);
 }
 
 .index-top {
@@ -57,7 +54,6 @@
   border-radius: 5px 30px 0 0;
   margin: 0 auto;
   margin-top: 5px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -108,4 +104,33 @@ input[name="tab_item"] {
 .index-bottom input:checked + .tab_item {
   background-color: #402718;
   color: #fff;
+}
+
+.post-box-search {
+  height: 100%;
+  margin-top: 10px;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+  background-color: #402718;
+  border-radius: 5px;
+}
+
+.searched-word {
+  display: flex;
+}
+
+.search-tag {
+  font-size: 18px;
+  color: #fff;
+}
+
+.searched-word {
+  font-size: 18px;
+  color: #ececec;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,0 +1,51 @@
+.profile-box {
+  padding: 10px;
+  background-color: #402718;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: solid rgb(90, 88, 88) 3px;
+  border-radius: 3px;
+  margin: 30px auto 10px;
+}
+
+.profile-hedder {
+  background-color: #caaa98;
+  padding: 5px;
+  border-bottom: double black 3px;
+  border-radius: 6px;
+}
+
+.profile-top {
+  color: rgb(43, 42, 42);
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info {
+  text-decoration: underline;
+  font-size: 24px;
+}
+
+.profiles-info {
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.profile-bottom {
+  padding: 10px 0;
+  color: black;
+  text-align: right;
+  text-decoration: none;
+}
+
+.profile-bottom a {
+  background-color: rgb(211, 204, 204);
+  color: black;
+  text-decoration: none;
+  border: solid rgb(163, 163, 163) 2px;
+  border-radius: 3px;
+}
+
+.posted-index {
+  color: white;
+  margin: 10px 0 10px 5px;
+}
