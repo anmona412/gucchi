@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
   
   def create
+    redirect_to user_session_path unless user_signed_in?
     post = PostsTag.new(posts_params)
     if post.valid?
       post.save
@@ -36,10 +37,20 @@ class PostsController < ApplicationController
   end
 
   def edit
+    binding.pry
+    @post_form = PostsTag.new(
+      user_id: @post.user.id,
+      comment: @post.comment,
+      category_id: @post.category_id,
+      name:@post.tags.name,
+      # post_id:@post.post_tag_relations.post,
+      # tag_id:@post.post_tag_relations.tag,
+    )
   end
 
   def update
-    if @post.update(posts_params)
+    post = PostsTag.update(posts_params)
+    if post.update(posts_params)
       redirect_to post_path
     else
       render "edit"

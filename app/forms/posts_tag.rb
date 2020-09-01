@@ -1,7 +1,8 @@
 class PostsTag
-
+  include Virtus.model
   include ActiveModel::Model
   attr_accessor :comment, :user_id, :category_id, :name
+
 
   with_options presence: true do
     validates :comment
@@ -19,4 +20,11 @@ class PostsTag
 
     PostTagRelation.create(post_id: post.id, tag_id: tag.id)
   end
+
+  def update
+    
+  end
+
+  private
+
 end

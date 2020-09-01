@@ -129,3 +129,8 @@ input[name="tab_item"] {
   font-size: 18px;
   color: #ececec;
 }
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+}
