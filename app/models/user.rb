@@ -8,6 +8,14 @@ class User < ApplicationRecord
   has_one :profile
   has_many :sns_credentials
   has_many :posts
+  
+  # validation
+  with_options presence: true do
+    num_and_char = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+
+    validates :nickname
+    validates :password, format: { with: num_and_char, message: '英数半角混合で設定してください' }
+  end
 
 
   def self.from_omniauth(auth)
@@ -22,6 +30,4 @@ class User < ApplicationRecord
     end
     {user: user, sns: sns}
   end
-
-  # validation
 end

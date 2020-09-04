@@ -6,7 +6,9 @@ class PostsTag
 
   with_options presence: true do
     validates :comment
-    validates :name
+    with_options numericality: { other_than: 1 } do
+      validates :category_id
+    end
   end
 
   def save

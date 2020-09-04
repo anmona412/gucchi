@@ -6,6 +6,7 @@ class Profile < ApplicationRecord
 
   validates :user_id, presence: true 
   with_options numericality: { other_than: 1 } do
-    validates :age_id, :profession_id
+    validates :age_id
+    validates :profession_id
   end
 end

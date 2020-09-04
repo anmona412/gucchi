@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tag_relations, dependent: :destroy
 
   validates :comment, presence: true 
+  
 
   def self.search(search)
     if search != ""

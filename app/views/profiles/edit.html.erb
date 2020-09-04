@@ -2,7 +2,7 @@
 
 <div class = "main-wrapper">
   <div>
-    <%= form_with model:[@user, @profile],local: true do |f| %>
+    <%= form_with url:user_profiles_path(current_user.id),local: true do |f| %>
       <%= f.collection_select(:age_id, Age.all, :id, :age, {selected:@profile.age_id}, {class:"select-box"}) %>
       <%= f.collection_select(:profession_id, Profession.all, :id, :profession, {selected:@profile.profession_id}, {class:"select-box"}) %>
       <%= f.submit "更新", class:"クラス"%>
