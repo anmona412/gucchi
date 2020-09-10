@@ -12,7 +12,12 @@
 
 ## URL
 
+http://18.181.71.203/
+＊エラー修正中
+
 ## テストアカウント名
+
+作成中
 
 ## 利用方法
 
@@ -43,9 +48,26 @@
 
 ## DB 設計
 
+テーブル設計参照
+
 ## ローカルでの動作方法
 
----
+GitHub clone
+git clone https://github.com/anmona412/gucchi.git
+
+Ruby 　バージョン  
+ ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin19]
+
+Rails 　バージョン
+Rails 6.0.3.2
+
+Gem 　バージョン  
+ 3.0.0
+
+yarn バージョン  
+ 1.22.4
+
+## パッケージ
 
 # テーブル設計
 
