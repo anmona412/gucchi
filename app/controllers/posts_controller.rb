@@ -17,6 +17,7 @@ class PostsController < ApplicationController
       {id: "other-posts", category: Post.where(category_id: 5).order(created_at: :desc)}
     ]
     @mk_post = PostsTag.new
+
   end
 
   def new

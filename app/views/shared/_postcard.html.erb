@@ -7,11 +7,20 @@
       </div>
 
       <div class = "post-age">
+      <% if post.user.profile == nil %>
+        Age: ---
+      <% else %>
         Age: <strong class = "card-font"><%= post.user.profile.age.age%></strong>
+      <% end %>
+
       </div>
 
       <div class = "post-profession">
-        Profession: <strong class = "card-font"><%= post.user.profile.profession.profession%></strong>
+        <% if post.user.profile == nil %>
+          Profession: ---
+        <% else %>
+          Profession: <strong class = "card-font"><%= post.user.profile.profession.profession%></strong>
+        <% end %>
       </div>
     </div>
 
