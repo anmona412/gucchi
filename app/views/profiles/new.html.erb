@@ -2,10 +2,23 @@
 
 <div class = "main-wrapper">
   <div class = "view-wrapper">
-    <%= form_with url: user_profiles_path(current_user.id), local: true do |f| %>
-      <%= f.collection_select(:age_id, Age.all, :id, :age, {}, {class:"select-box"}) %>
-      <%= f.collection_select(:profession_id, Profession.all, :id, :profession, {}, {class:"select-box"}) %>
-      <%= f.submit "更新", class:"クラス"%>
-    <% end %>
+    <div class = "profile-hedder">
+      <div class = "profile-top">
+        <div class = "user-info">
+          Name: <%= current_user.nickname %>
+        </div>
+        <div class= "profiles">
+          <%= form_with url: user_profiles_path(current_user.id), local: true do |f| %>
+            <div class = "profiles-info">
+              Age:<%= f.collection_select(:age_id, Age.all, :id, :age, {}, {class:"select-box"}) %>
+            </div>
+            <div class = "profiles-info">
+                Profession:<%= f.collection_select(:profession_id, Profession.all, :id, :profession, {}, {class:"select-box"}) %>
+            </div>
+            <%= f.submit "作成", class:"クラス"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
